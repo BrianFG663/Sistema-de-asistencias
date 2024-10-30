@@ -12,13 +12,13 @@ Instalacion:<br>
 -Abrir laragon, iniciar el servidor mediante el boton 'Inciar todo', entrar a la seccion de base de datos, apretar la seccion de archivo, apretar la opcion cargar archivo SQL y buscar en el sistema la carpeta descargada anteriormente, seleccionar el archivo SQL llamado 'Base de datos', luego darle al boton azul en la barra llamado 'ejecutar SQL' <br>
 
 Ejecucion:<br>
--Copiar la ruta del archivo index.php de la carpeta descargada desde Git-hub.<br>
--Abrir la consola de comandos y ejecutar el siguiente comando: <br>
-- php -S localhost:8000 (ruta copiada anteriormente) <br>
--Entrar a tu navegador y entrar a la pagina http://localhost:8000/<br>
--inicia sesion con los siguientes datos:<br>
--E-mail: admin<br>
--Contrasena: 1234<br>
+• Copiar la ruta del archivo index.php de la carpeta descargada desde Git-hub.<br>
+• Abrir la consola de comandos y ejecutar el siguiente comando: <br>
+• php -S localhost:8000 (ruta copiada anteriormente) <br>
+• Entrar a tu navegador y entrar a la pagina http://localhost:8000/<br> <br>
+• inicia sesion con los siguientes datos:<br> <br>
+    • E-mail: admin<br>
+    • Contrasena: 1234<br> <br> <br>
 Comienza a tomar usar Asist-o-Matic!
 
 
