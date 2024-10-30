@@ -13,13 +13,13 @@ Instalacion:<br>
 
 Ejecucion:<br>
 -Copiar la ruta del archivo index.php de la carpeta descargada desde Git-hub.<br>
--Abrir la consola de comandos y ejecutar el siguiente comando:<br>
+-Abrir la consola de comandos y ejecutar el siguiente comando: <br>
 - php -S localhost:8000 (ruta copiada anteriormente) <br>
 -Entrar a tu navegador y entrar a la pagina http://localhost:8000/<br>
 -inicia sesion con los siguientes datos:<br>
 -E-mail: admin<br>
 -Contrasena: 1234<br>
--Comienza a tomar usar Asist-o-Matic!
+Comienza a tomar usar Asist-o-Matic!
 
 
 
