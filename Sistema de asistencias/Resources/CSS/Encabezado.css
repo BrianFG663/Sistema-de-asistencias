@@ -1,0 +1,231 @@
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    height: 10vh;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #b33333;
+    justify-content: space-between;
+}
+
+.imagen-encabezado{
+    width: 7vh;
+    position: relative;
+    left: 1vw;
+}
+
+.img-perfil{
+    width: 3.1vh;
+    margin-right: 5px;
+    margin-bottom: 7px;
+}
+
+.img-session{
+    width: 2.5vh;
+    margin-right: 5px;
+    position: relative;
+    top: 3px;
+}
+
+.titulo-encabezado{
+    font-weight: 600;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    margin-right: 5px;
+}
+
+.titulo-encabezado::before {
+    content: "[";
+    color: rgb(241, 170, 122);
+    margin-right: 5px; /* Ajusta el espacio entre el corchete y el texto */
+}
+
+.titulo-encabezado::after {
+    content: "]";
+    color: rgb(241, 170, 122);
+    margin-left: 5px; /* Ajusta el espacio entre el corchete y el texto */
+}
+
+
+.bienvenido {
+    position: relative;
+    right: 31vw;
+    display: inline-block;
+    font-weight: 600;
+    padding: 0 20px; /* Ajusta el espacio entre el texto y los corchetes */
+    color: rgb(255, 255, 255); /* Color del texto */
+    font-size: 2rem; /* Tamaño del texto */
+    font-family: 'MiFuente', sans-serif;
+
+}
+
+.bienvenido::before {
+    content: "[";
+    color: rgb(241, 170, 122);
+    margin-right: 2px; /* Ajusta el espacio entre el corchete y el texto */
+}
+
+.bienvenido::after {
+    content: "]";
+    color: rgb(241, 170, 122);
+    margin-left: 2px; /* Ajusta el espacio entre el corchete y el texto */
+}
+
+.container-button{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    position: relative;
+    left: 8vw;
+}
+
+.container-button div{
+    margin-right: 30px;
+}
+
+.container-button div a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.container-button div a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.span-perfil{
+    margin-left: 3px;
+    position: relative;
+    bottom: 17px;
+}
+
+.span-sesion{
+    margin-left: 3px;
+    position: relative;
+    bottom: 4px;
+}
+
+
+.boton-encabezado {
+    color: rgb(226, 226, 226);; /* Texto en blanco */
+    border: none;
+    height: 4vh;
+    margin: 2px;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #b33333;
+    transition: 0.3s;
+    font-family: 'MiFuente', sans-serif;
+
+}
+
+.boton-encabezado:hover {
+    color: rgb(226, 226, 226);; /* Texto en blanco */
+    border: none;
+    margin: 2px;
+    height: 4vh;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: #db5454;
+}
+
+/* botones menu-agregar */
+
+#boton_atras {
+    background-color: white; /* Color de fondo rojo (como cancelar) */
+    color: #e74c3c; /* Color del texto blanco */
+    border: 2px solid #e74c3c;
+    font-weight: 600;
+    border-radius: 2px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+/* Estilo para cuando el botón está en estado hover */
+#boton_atras:hover {
+    background-color: #e74c3c;
+    font-weight: 600;
+    color: white;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+
+#boton_agregar {
+    background-color: white; /* Color de fondo verde */
+    color: #2ecc71; /* Color del texto blanco */
+    border: 2px solid #2ecc71; /* Sin borde */
+    font-weight: 600;
+    border-radius: 2px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+/* Estilo para cuando el botón está en estado hover */
+#boton_agregar:hover {
+    background-color: #2ecc71;
+    font-weight: 600;
+    color: white;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+
+.container-botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* estilo del select */
+
+.styled-select {
+    width: 73%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #b33333;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #333;
+    background-color: white;
+    position: relative;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.styled-select::after {
+    content: '▼';
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #b33333; /* Color de la flecha */
+}
+
+.styled-select:hover {
+    border-color: white;
+    background-color: rgb(240, 240, 240);
+}
+
+.styled-select:focus {
+    outline: none;
+    border-color: #b33333;
+    box-shadow: 0 0 5px rgba(179, 51, 51, 0.5);
+}
+
+/* Estilo para el desplegable */
+.styled-select option {
+    background-color: white; /* Fondo de las opciones */
+    color: #333; /* Color de texto */
+    border: 1px solid #b33333; /* Bordes de las opciones (esto puede no aplicarse en todos los navegadores) */
+}
+
+

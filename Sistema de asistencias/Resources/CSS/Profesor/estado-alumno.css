@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'MiFuente';
+    src: url('/Resources/Fonts/CaviarDreams.ttf') format('truetype');
+}
+
+html {
+    font-family: 'MiFuente', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: rgb(240, 240, 240);
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    position: relative;
+    top: 15vh;
+    left: 15%;
+    width: 83%;
+    height: 75vh;
+    background-color: white;
+    overflow-y: auto;
+    margin-bottom: 4vh;
+}
+
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 7%;
+    background-color: #b33333;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    align-items: center;
+    border-radius: 2px 2px 0 0;
+}
+
+.container-alumnos{
+    position: relative;
+    top: 8%;
+    display: flex;
+    flex-direction: column;
+}
+
+.alumno{
+    position: relative;
+    top: 8%;
+    display: flex;
+    flex-direction: row;
+    height: 3vh;
+    border: 1px solid grey;
+    margin-bottom: 2px;
+}
+
+.id{
+    display: flex;
+    font-size: 20px;
+    width: 5%;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+.nombre{
+    display: flex;
+    font-size: 20px;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+.dni{
+    display: flex;
+    font-size: 20px;
+    width: 15%;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+.asistencias{
+    display: flex;
+    font-size: 20px;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+.notas{
+    display: flex;
+    font-size: 20px;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    box-sizing: border-box;
+}
+
+.eliminar-nota{
+    display: none;
+    position: absolute;
+    height: 99%;
+    width: 19.76%;
+    background-color: white;
+    color: #b33333;
+    font-weight: 600;
+    border: 1.7px solid #b33333;
+    cursor: pointer;
+}
+
+#formulario-eliminar-nota{
+    width: 0%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.nota-individual{
+    flex: 1; /* Hace que cada elemento interno tome el mismo ancho disponible */
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: 600;
+}
+
+.notas > .nota-individual:not(:last-child) {
+    margin-right: 10px; /* Añade un margen solo a los divs internos que no son el último */
+}
+
+.estado{
+    display: flex;
+    font-size: 20px;
+    width: 15%;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    font-weight: 600;
+}
+
+
+.alumno-top{
+    position: relative;
+    top: 8%;
+    display: flex;
+    flex-direction: row;
+    height: 5vh;
+    border: 1px solid grey;
+    margin-bottom: 2px;
+}
+
+.top-dni{
+    display: flex;
+    font-size: 20px;
+    width: 15%;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.top-nombre{
+    display: flex;
+    font-size: 20px;
+    width: 20%;
+    justify-content: center;
+    font-weight: 600;
+    align-items: center;
+}
+
+.top-id{
+    display: flex;
+    font-size: 20px;
+    width: 5%;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.asistencias-top{
+    display: flex;
+    font-size: 20px;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.notas-top{
+    display: flex;
+    font-size: 20px;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.estado-top{
+    display: flex;
+    font-size: 20px;
+    width: 15%;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+
+
