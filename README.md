@@ -16,7 +16,7 @@ Ejecucion:<br>
 • php -S localhost:8000 (ruta copiada anteriormente) <br>
 • Entrar a tu navegador y entrar a la pagina http://localhost:8000/<br> <br>
 • inicia sesion con los siguientes datos:<br> <br>
-    • E-mail: admin<br>
+    • E-mail: javier@gmail.com<br>
     • Contrasena: 1234<br> <br> <br>
 Comienza a tomar usar Asist-o-Matic!
 
