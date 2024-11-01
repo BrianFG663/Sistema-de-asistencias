@@ -1,0 +1,199 @@
+html {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'MiFuente', sans-serif;
+}
+
+@font-face {
+    font-family: 'MiFuente';
+    src: url('/Resources/Fonts/CaviarDreams.ttf') format('truetype');
+}
+
+
+
+body {
+    background: rgb(240, 240, 240);
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%; /* Ocupa todo el ancho del formulario */
+    height: 40vh;
+}
+
+
+.title::before {
+    content: "[";
+    color: rgb(241, 170, 122);
+    margin-right: 10px; /* Ajusta el espacio entre el corchete y el texto */
+}
+
+.title::after {
+    content: "]";
+    color: rgb(241, 170, 122);
+    margin-left: 10px; /* Ajusta el espacio entre el corchete y el texto */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Cambiado a columna para alinear elementos verticalmente */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.formulario-materia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 22vh;
+    height: 55vh;
+    left: 7%;
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.formulario-administrador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 22vh;
+    left: 5%;
+    height: 55vh;
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.container-input {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    display: flex;
+    margin-bottom: 20px; /* Espacio entre los grupos de inputs */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-dni{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    position: absolute;
+    left: 12%;
+    bottom: 13vh;
+}
+
+.container-correo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    position: absolute;
+    left: 12%;
+    bottom: 13vh;
+}
+
+.formulario-materia label {
+    margin-bottom: 4px; /* Ajusta el espacio debajo del label */
+    font-weight: bold;
+}
+
+.formulario-administrador label {
+    margin-bottom: 4px; /* Ajusta el espacio debajo del label */
+    font-weight: bold;
+}
+
+input[type="text"] {
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid #b33333;
+    border-radius: 2px;
+    font-size: 16px;
+    width: 80%; /* Ocupa todo el ancho del contenedor */
+    text-align: center;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #b33333;
+    box-shadow: 0 0 5px rgba(179, 51, 51, 0.5);
+}
+
+input[type="number"] {
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid #b33333;
+    border-radius: 2px;
+    font-size: 16px;
+    width: 80%; /* Ocupa todo el ancho del contenedor */
+    text-align: center;
+}
+input[type="number"]:focus {
+    outline: none;
+    border-color: #b33333;
+    box-shadow: 0 0 5px rgba(179, 51, 51, 0.5);
+}
+
+input[type="date"] {
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid #b33333;
+    border-radius: 2px;
+    font-size: 16px;
+    width: 80%; /* Ocupa todo el ancho del contenedor */
+    text-align: center;
+}
+input[type="date"]:focus {
+    outline: none;
+    border-color: #b33333;
+    box-shadow: 0 0 5px rgba(179, 51, 51, 0.5);
+}
+
+input[type="button"] {
+    width: 30%;
+}
+
+
+.mensaje{
+    position: relative;
+    left: 40%;
+    top: 15vh;
+    border: 1px solid #ddd;
+    width: 30%;
+    height: 6vh;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.mensaje img {
+    position: relative;
+    left: 18%;
+    width: 8%;
+    height: 80%;
+}
+
+.mensaje span{
+    position: relative;
+    left: 20%;
+    font-weight: 600;
+}
