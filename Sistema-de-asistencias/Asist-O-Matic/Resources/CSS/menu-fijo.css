@@ -1,0 +1,152 @@
+/* Ajustes en el menú lateral */
+.sidenav {
+    height: calc(100% - 10vh); /* Resta la altura de la cabecera */
+    width: 12.5%;
+    position: fixed;
+    z-index: 1;
+    top: 10vh;
+    left: 0;
+    background: rgb(240, 240, 240);
+    border-right: 0.5vh solid #b33333; /* Borde rojo inicial */
+    overflow-x: hidden;
+    transition: width 0.25s, border-right 0.5s; /* Añadida transición para el borde */
+    padding-top: 60px;
+    border-top-right-radius: -10px;
+}
+
+
+.botton-div {
+    position: absolute; /* Cambiado para que esté fijo en la parte inferior */
+    bottom: 5vh; /* Asegura que esté al final del menú */
+    left: 0; /* Alinea el div al lado izquierdo del menú */
+    width: 100%; /* Ocupa todo el ancho del menú */
+    height: 2.5vh;
+    background-color: #b33333;
+    padding: 20px; /* Ajusta el relleno según sea necesario */
+    text-align: center; /* Centra el contenido */
+    border-top: 2px solid #b33333;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.span-div{
+    color: white;
+    font-weight: 600;
+    margin-left: 2vh;
+    margin-bottom: 1vh;
+}
+
+.image-div{
+    width: 2.5vw;
+    margin-left: 1vw;
+    margin-bottom: 10px;    
+    background-color: #e2e2e2;
+    border-radius: 50px;
+}
+
+.img-menu{
+    width: 2.5vw;
+    position: relative;
+    left: 8vh;
+}
+
+.img-menu-admin{
+    width: 2.5vw;
+    position: relative;
+    left: 8vh;
+}
+
+.span-institutos{
+    position: relative;
+    left: 2.5vw;
+}
+
+.menu-span{
+    position: relative;
+    left: 5%;
+}
+
+.span-materias{
+    position: relative;
+    left: 2.3vw;
+}
+
+.span-listado{
+    position: relative;
+    left: 10%;
+}
+
+.span-profesor{
+    position: relative;
+    left: 2.1vw;
+}
+
+.calificaciones-span{
+    position: relative;
+    left: 7%;  
+}
+
+.span-parametros{
+    position: relative;
+    left: 1.8vw;
+}
+
+.alumno-span{
+    position: relative;
+    left: 21%;
+}
+
+.agregar-alumno-span{
+    position: relative;
+    left: 7%;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.cont-menu a span{
+    font-weight: 600;
+    font-size: 24px;
+    position: relative;
+    width: 10vw;
+    bottom: 10px;
+    margin-top: 20px;
+    padding-left: 10px;
+
+}
+
+.cont-menu a {
+    text-decoration: none; /* Sin subrayado */
+    color: inherit; /* Hereda el color del texto del contenedor padre */
+    margin: 0; /* Sin margen */
+    padding-left: 10px; /* Relleno a la izquierda */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Columna */
+    transition: 0.3s;
+    color: #b33333;
+}
+
+.cont-menu a:hover {
+    background-color: #b333338f;
+    margin: 0;
+    padding-left: 10px;
+    color: white;
+}
+
+.cont-menu{
+
+    height: 70%;
+    position: relative;
+    top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.admin-span{
+    margin-left: 10px;
+}

@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'MiFuente';
+    src: url('/Resources/Fonts/CaviarDreams.ttf') format('truetype');
+}
+
+html {
+    font-family: 'MiFuente', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: rgb(240, 240, 240);
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    position: relative;
+    top: 30vh;
+    left: 21%;
+    width: 70%;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.informacion-nueva{
+    height: 100%;
+    width: 48%;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.informacion-actual{
+    height: 100%;
+    width: 48%;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.container-span{
+    height: 65%;
+    width: 60%;
+    position: relative;
+    top: 10%;
+    left: 20%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.container-span-editar{
+    height: 65%;
+    width: 60%;
+    position: relative;
+    top: 5%;
+    left: 20%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+}
+
+label{
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.id,.nombre,.apellido,.mail,.rol{
+    background: rgb(250, 250, 250);
+    border: 1px solid #B33333;
+    width: 100%;
+    height: 15%;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.top{
+    width: 100%;
+    height: 5vh;
+    background-color: #B33333;
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+input[type="text"] {
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid #b33333;
+    border-radius: 2px;
+    font-size: 16px;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    text-align: center;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #b33333;
+    box-shadow: 0 0 5px rgba(179, 51, 51, 0.5);
+}
+
+#boton_agregar {
+    background-color: white; /* Color de fondo verde */
+    color: #2ecc71; /* Color del texto blanco */
+    border: 2px solid #2ecc71; /* Sin borde */
+    font-weight: 600;
+    border-radius: 2px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+    width: 50%;
+    position: relative;
+}
+
+#boton_agregar:hover {
+    background-color: #2ecc71;
+    font-weight: 600;
+    color: white;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+
+.container-botones-editar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#boton_agregar,#boton_atras{
+    width: 45%;
+}
