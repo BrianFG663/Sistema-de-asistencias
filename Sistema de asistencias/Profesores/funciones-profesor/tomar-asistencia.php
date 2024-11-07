@@ -14,6 +14,7 @@
     $profesor = new Profesor($rowprofesor['nombre'],$rowprofesor['apellido'],$rowprofesor['dni'],$rowprofesor['legajo']);
     $alumnos = $profesor->mostrarAlumnos($conexion,$_SESSION['id_materia'],$id_instituto);
     $asistencia_dia = Materia::asistenciasDia($conexion,$_SESSION['id_materia']);
+    $cumpleanos = Profesor::verificarCumpleanos($conexion,$_SESSION['id_materia']);
 
 ?>
 
@@ -54,6 +55,20 @@
     </div>
 </div>
 <body>
+
+    <?php
+        if($cumpleanos){
+            echo 
+            '<div id="desplegable">
+                <img class="img-izquierda" src="../../Resources/Images/cumpleaños.png">
+                <span>Hoy es cumpleaños de '.$cumpleanos[0]['nombre']." ".$cumpleanos[0]['apellido'].' </span>
+                <img class="img-derecha" src="../../Resources/Images/cumpleaños.png">
+            </div>';
+        }
+    ?>
+    
+    
+
     <div class="container">
         <div class="top"><button class="button-back" onclick="redireccion(2)"></button><span class="titulo">LISTADO DE ALUMNOS</span></div>
         <div class="container-alumnos">
@@ -74,19 +89,26 @@
                                 </div>';
                         }
                     }
+
                 ?>
             </form>
         </div>
         <?php
-        
-        if($alumnos){
-           echo '<div class="boton"><input class="boton-tomar-asistencia" type="button" value="SUBIR ASISTENCIA" onclick="formularioAsistencias()"></div>';
-        }
         
         }else{ //cierra el if del booleano nque comprueba si se tomo la asistencia de esta materia el dia actual
             echo '<div class="contenedor-lista"><div class="mensaje-asistencias-tomada">Ya se tomo asistencia este dia😊</div></div>';
         }
         ?>
     </div>
+
+        <?php
+        
+        if($alumnos){
+            echo '<div class="boton"><input class="boton-tomar-asistencia" type="button" value="SUBIR ASISTENCIA" onclick="formularioAsistencias()"></div>';
+         }
+        
+        ?>
 </body>
+
+<script src="../../Resources/JS/boton.js"></script>
 </html>

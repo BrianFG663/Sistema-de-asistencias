@@ -232,7 +232,6 @@ class Materia{
 
         return $resultado->fetch(PDO::FETCH_ASSOC);
     }
-
 }
 
 

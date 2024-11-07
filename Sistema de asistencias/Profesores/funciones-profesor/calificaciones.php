@@ -155,35 +155,35 @@ $alumnos = $profesor->mostrarAlumnos($conexion,$_SESSION['id_materia'],$id_insti
                     }
                 ?>
         </div>
-
-        <div class="container-botton">
-        
-            <div class="recuperatorio" id="recuperatorio">
-                <div id="label-fecha">
-                    <label for="fecha-recuperatorio">Fecha del parcial</label>
-                </div>
-                <input type="date" name="fecha" id="fecha">
-            </div>
-
-            <div id="error-dia">
-
-            </div>
-
-            <div class="select-contenedor">
-                <label for="tipo-examen">Seleccione tipo de examen</label>
-                <select class="select-tipo" name="tipo-examen" id="tipo-examen" onchange="mostrarLabel()">
-                    <option value="1">PARCIAL</option>
-                    <option value="2">RECUPERATORIO</option>
-                    <option value="3">TRABAJO PRACTICO</option>
-                </select>
-            </div>
-            
-            <input class="subir-calificaciones" type="button" value="SUBIR CALIFICACIONES" onclick="formularioCalificaciones(this)">
-            </form>
-
-            
-        </div>
 </div>
+
+<div class="container-botton">
+        
+        <div class="recuperatorio" id="recuperatorio">
+            <div id="label-fecha">
+                <label for="fecha-recuperatorio">Fecha del parcial</label>
+            </div>
+            <input type="date" name="fecha" id="fecha">
+        </div>
+
+        <div id="error-dia">
+
+        </div>
+
+        <div class="select-contenedor">
+            <label for="tipo-examen">Seleccione tipo de examen</label>
+            <select class="select-tipo" name="tipo-examen" id="tipo-examen" onchange="mostrarLabel()">
+                <option value="1">PARCIAL</option>
+                <option value="2">RECUPERATORIO</option>
+                <option value="3">TRABAJO PRACTICO</option>
+            </select>
+        </div>
+        
+        <input class="subir-calificaciones" type="button" value="SUBIR CALIFICACIONES" onclick="formularioCalificaciones(this)">
+        </form>
+
+        
+    </div>
 </body>
 </html>
 

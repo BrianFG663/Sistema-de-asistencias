@@ -71,7 +71,7 @@ body {
 .nombre{
     display: flex;
     font-size: 20px;
-    width: 20%;
+    width: 24%;
     justify-content: center;
     align-items: center;
     border-left: 1px solid gray;
@@ -81,7 +81,7 @@ body {
 .dni{
     display: flex;
     font-size: 20px;
-    width: 15%;
+    width: 19%;
     justify-content: center;
     align-items: center;
     border-left: 1px solid gray;
@@ -91,8 +91,8 @@ body {
 .asistencias{
     display: flex;
     font-size: 20px;
-    width: 25%;
-    justify-content: center;
+    width: 17%;
+    justify-content: space-around;
     align-items: center;
     border-left: 1px solid gray;
     border-right: 1px solid gray;
@@ -106,6 +106,32 @@ body {
     border-left: 1px solid gray;
     border-right: 1px solid gray;
     box-sizing: border-box;
+}
+
+.cantidad-asistencias{
+    position: relative;
+    left: 84%;
+    top: 12.5vh;
+    border: 1px solid #ddd;
+    width: 14%;
+    height: 5vh;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.cantidad-asistencias img {
+    position: relative;
+    left: 5%;
+    width: 15.5%;
+    height: 80%;
+}
+
+.cantidad-asistencias span{
+    position: relative;
+    left: 9%;
+    font-weight: 600;
 }
 
 .eliminar-nota{
@@ -164,7 +190,7 @@ body {
 .top-dni{
     display: flex;
     font-size: 20px;
-    width: 15%;
+    width: 19%;
     justify-content: center;
     align-items: center;
     font-weight: 600;
@@ -173,7 +199,7 @@ body {
 .top-nombre{
     display: flex;
     font-size: 20px;
-    width: 20%;
+    width: 24%;
     justify-content: center;
     font-weight: 600;
     align-items: center;
@@ -190,8 +216,9 @@ body {
 
 .asistencias-top{
     display: flex;
+    flex-direction: column;
     font-size: 20px;
-    width: 25%;
+    width: 17%;
     justify-content: center;
     align-items: center;
     font-weight: 600;

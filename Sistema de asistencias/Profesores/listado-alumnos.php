@@ -11,9 +11,15 @@
 
     $rowprofesor = $_SESSION['rowprofesor'];
     $id_instituto = $_SESSION['id_instituto'];
-    date_default_timezone_set('America/Argentina/Buenos_Aires');
-    $fecha = date('Y-m-d');
 
+    if(isset($_POST["fecha-asistencia"])){
+        $fecha = $_POST["fecha-asistencia"];
+    }else{
+        date_default_timezone_set('America/Argentina/Buenos_Aires');
+        $fecha = date('Y-m-d');
+    }
+
+    
     $alumnoPresentes = Profesor::listadoPresentes($conexion,$id_instituto,$_SESSION['id_materia'],$fecha);
     $alumnoAusentes = Profesor::listadoAusentes($conexion,$id_instituto,$_SESSION['id_materia'],$fecha);
 
@@ -26,12 +32,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumnos</title>
-    <link rel="stylesheet" href="../Resources/CSS/Profesor/alumno-index.css">
+    <link rel="stylesheet" href="../Resources/CSS/Profesor/listado.css">
     <link rel="stylesheet" href="../Resources/CSS/Encabezado.css">
     <link rel="stylesheet" href="../Resources/CSS/menu-fijo.css">
     <link rel="shortcut icon" href="../Resources/Images/icono.png" sizes="64x64">
     <script src="../Resources/JS/Profesor.js"></script>
     <script src="../Resources/JS/Menu.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <header class="encabezado">
@@ -57,6 +64,22 @@
     </div>
 </div>
 <body>
+
+<div class="cantidad-asistencias" id="cantidad-asistencias">
+    <img src="../Resources/Images/calendario.png" alt="" id="imagen-calendario">
+    <span id="fecha-texto">Listado del día: <?php echo $fecha; ?></span>
+    
+    <div id="formulario-busqueda" class="formulario-busqueda">
+        <div class="formulario-div">
+            <form action="listado-alumnos.php" method="post">
+                <input type="date" name="fecha-asistencia" class="date-formulario">
+                <button type="submit" class="buscar-fecha"></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
     <div class="container-listado">
         <div class="top-listado"><span class="titulo">ALUMNOS PRESENTES</span></div>
         <div class="container-alumnos-listado">
@@ -122,4 +145,6 @@
     </div>
 
 </body>
+
+<script src="../Resources/JS/boton.js"></script>
 </html>

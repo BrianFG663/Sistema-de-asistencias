@@ -15,12 +15,65 @@ body {
     padding: 0px;
 }
 
+.cumpleaños{
+    position: relative;
+    left: 15%;
+    width: 83%;
+    height: 5vh;
+    top: 13vh;
+    border: 1px solid black;
+}
+
+/* Estilos iniciales */
+#desplegable {
+    border: #b33333 1px solid;
+    position: relative;
+    top: 13vh;
+    left: 73%;
+    width: 25%;
+    height: 5vh;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Clase para mostrar el div */
+#desplegable.visible {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.img-izquierda{
+    height: 70%;
+    width: 7%;
+    margin-right: 1%;
+}
+
+.img-derecha{
+    height: 70%;
+    width: 7%;
+    margin-left: 1%;
+}
+
+#desplegable span{
+    font-weight: 600;
+}
+
+
 .container{
     position: relative;
     top: 15vh;
     left: 15%;
     width: 83%;
-    height: 75vh;
+    height: 68.7vh;
     background-color: white;
     overflow-y: auto;
     margin-bottom: 4vh;
@@ -31,22 +84,51 @@ body {
     top: 15vh;
     left: 15%;
     width: 83%;
-    height: 39vh;
+    height: 36vh;
     background-color: white;
     overflow-y: auto;
     margin-bottom: 4vh;
 }
 
 .container-botton{
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    left: 15%;
+    top: 15vh;
     height: 4vh;
-    width: 99.9%;
+    width: 83%;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     background-color: white;
 }
+
+.cantidad-asistencias{
+    position: relative;
+    left: 82%;
+    top: 12.5vh;
+    border: 1px solid #ddd;
+    width: 16%;
+    height: 5vh;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.cantidad-asistencias img {
+    position: relative;
+    left: 5%;
+    width: 12.5%;
+    height: 80%;
+}
+
+.cantidad-asistencias span{
+    position: relative;
+    left: 9%;
+    font-weight: 600;
+}
+
+
 
 .recuperatorio{
     position: relative;
@@ -185,6 +267,15 @@ input[type="number"]:focus {
     height: 100%;
 }
 
+.date-formulario{
+    margin-left: 10px;
+    height: 88%;
+    border: 1px solid #b33333;
+    border-radius: 2px;
+    width: 90%;
+    text-align: center;
+}
+
 input[type="date"] {
     margin-left: 10px;
     height: 88%;
@@ -282,11 +373,11 @@ input[type="date"]:focus {
 }
 
 .boton{
-    position: absolute;
-    bottom: 0.5vw;
+    position: relative;
+    top: 12vh;
     left: 0;
-    right: 0;
-    height: 5%;
+    right: 0.9vw;
+    height: 4%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -331,6 +422,8 @@ input[type="date"]:focus {
 
 
 .boton-tomar-asistencia{
+    position: relative;
+    right: 1vw;
     height: 90%;
     margin-right: 1vw;
     width: 10%;
@@ -643,6 +736,8 @@ input[type="date"]:focus {
     color: #b33333;
     font-weight: 600;
 }
+
+
 
 .boton-inscribir-alumnos{
     position: relative;
@@ -1053,12 +1148,12 @@ input[type="date"]:focus {
 
 .contenedor-lista-asistencia{
     position: relative;
-    top: 30vh;      
+    top: 8vh;
     height: 20vh;
     margin-right: 1vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 

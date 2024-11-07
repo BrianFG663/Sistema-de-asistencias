@@ -21,6 +21,7 @@
     $asistencias_materia = Materia::asistenciasMateria($conexion,$id_materia);
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +45,13 @@
     </div>
 </header>
 
+
+
+<div class="cantidad-asistencias">
+        <img src="../Resources/Images/diario.png" alt="">
+        <span>Cantidad de clases: <?php echo $asistencias_materia["total_fechas"] ?> </span>
+</div>
+
 <div class="menu-container">
     <div id="mySidenav" class="sidenav">
         <div class="cont-menu">
@@ -65,15 +73,25 @@
         <div class="top"></button><span class="titulo">ESTADO DE LOS ALUMNOS</span></div>
         <div class="container-alumnos">
         <?php
-            echo'<div class="alumno-top"><div class="top-id">ID</div><div class="top-nombre">NOMBRE COMPLETO</div><div class="top-dni">DNI</div><div class="notas-top">NOTAS PARCIALES/TRABAJOS</div><div class="asistencias-top">ASISTENCIA</div><div class="estado-top">ESTADO</div></div>';       
+            echo'<div class="alumno-top">
+                    <div class="top-id">ID</div>
+                    <div class="top-nombre">NOMBRE COMPLETO</div>
+                    <div class="top-dni">DNI</div>
+                    <div class="notas-top">NOTAS PARCIALES/TRABAJOS</div>
+                    <div class="asistencias-top">
+                        <span>ASISTENCIAS</span>
+                        <span>CANTIDAD - PORCENTAJE</span>
+                    </div>
+                    <div class="estado-top">ESTADO</div>
+                </div>';       
                 foreach ($alumnos as $alumno) {
 
                     $notas = Alumno::notasAlumno($conexion,$alumno['id']); //funcion trae las notas del alumno
                     $asistencias_alumno = Alumno::asistenciasAlumno($conexion,$id_materia,$alumno['id'],$asistencias_materia,$ram);
                     $asistencias_alumno = floatval($asistencias_alumno);
                     $asistencias_alumno = round($asistencias_alumno, 0);
+                    $cantidad_asistencia_alumno = Alumno::cantidadAsistencias($conexion,$id_materia,$alumno["id"]);
                     $estado = Alumno::estadoAlumno($conexion,$alumno['id'],$ram,$asistencias_alumno);
-
 
                     echo '<div class="alumno">
                             <div class="id">' . $alumno['id'] . '</div>
@@ -89,7 +107,7 @@
                         echo '<div class="nota-individual">Alumno sin evaluar.</div>';
                     }
                     echo    '</div> 
-                            <div class="asistencias">%'.$asistencias_alumno.'</div>
+                            <div class="asistencias"><span>'.$cantidad_asistencia_alumno["total_asistencia"].'</span><span>%'.$asistencias_alumno.'</span></div>
                             <div class="estado">'.$estado.'</div>
                         </div>';
                 }

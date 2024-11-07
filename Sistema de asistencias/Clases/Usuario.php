@@ -30,9 +30,7 @@
             $resultado->bindParam(':id', $id);
             $resultado->execute();
 
-            $row = $resultado->fetch(PDO::FETCH_ASSOC);
-
-            return $row;
+            return $resultado->fetch(PDO::FETCH_ASSOC);
         }
 
         public static function getUser($conexion,$mail){
@@ -66,6 +64,20 @@
                 return true;
             }
 
+        }
+
+        public function validarCanditadAdmin($conexion){
+            $sql_validar =
+            "SELECT COUNT(id) AS total_admin
+            FROM usuario
+            WHERE rol = 'administrador'";
+
+            $resultado = $conexion->prepare($sql_validar);
+            $resultado->execute();
+
+            $row = $resultado->fetch(PDO::FETCH_ASSOC);
+
+            return $row;
         }
 
         public function comprobarContraseña($contraseña_actual){

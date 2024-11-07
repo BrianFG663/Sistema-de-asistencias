@@ -1,6 +1,6 @@
 <?php
-    include_once 'Setup.php';
     session_unset();
+    include_once 'Setup.php';
 ?>
 
 <!DOCTYPE html>

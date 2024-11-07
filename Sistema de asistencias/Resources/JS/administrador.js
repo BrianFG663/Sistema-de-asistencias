@@ -498,7 +498,13 @@ function formularioAdministrador(){
         
 }
 
-function EliminarAdmin(button) {
+function EliminarAdmin(event, button) {
+    // Evitar que el formulario se envíe automáticamente
+    event.preventDefault();
+    
+    // Obtener el formulario más cercano
+    let formulario = button.closest('form');
+
     Swal.fire({
         title: "¿Está seguro de eliminar?",
         text: "¡Esta acción no tiene vuelta atrás!",
@@ -509,21 +515,28 @@ function EliminarAdmin(button) {
         confirmButtonText: "Eliminar"
     }).then((result) => {
         if (result.isConfirmed) {
-            Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "Se ha eliminado correctamente!",
-                showConfirmButton: false,
-                timer: 1500
+            let datos = new FormData(formulario);
+            
+            fetch('Administradores-db.php', {
+                method: 'POST',
+                body: datos
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.mensaje === "falso") {
+                    Swal.fire({
+                        icon: "error",
+                        title: "No se puede eliminar el único administrador disponible"
+                    });
+                } else if (data.mensaje === "verdadero") {
+                    formulario.submit();
+                    location.href =  "Administradores-db.php";
+                }
             });
-
-
-            setTimeout(() => {
-                button.closest('form').submit();
-            }, 1600);
         }
     });
 }
+
 
 function editarPerfil(){
     let nombre = document.getElementById("nombre").value

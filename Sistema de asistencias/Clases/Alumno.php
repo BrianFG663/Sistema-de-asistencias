@@ -164,6 +164,31 @@
 
 
         } 
+
+        public static function cantidadAsistencias($conexion, $materia_id, $alumno_id) {
+            $sql_asistencia = 
+            "SELECT SUM(CASE 
+                           WHEN valor = 0.5 THEN 0.5 
+                           WHEN valor = 1 THEN 1 
+                       END) AS total_asistencia
+            FROM asistencias
+            WHERE materia_id = :materia_id 
+            AND alumno_id = :alumno_id
+            AND valor IN (0.5, 1)";
+        
+            $resultado = $conexion->prepare($sql_asistencia);
+            $resultado->bindParam(':materia_id', $materia_id);
+            $resultado->bindParam(':alumno_id', $alumno_id);
+            $resultado->execute();
+            $row = $resultado->fetch(PDO::FETCH_ASSOC);
+        
+            // Si no hay resultados o es null devuelvo 0 para mostrarlo en la cantidad de asitencias
+            if ($row && isset($row['total_asistencia'])) {
+                return $row;
+            } else {
+                return ["total_asistencia" => "0"];
+            }
+        }
     }
 
 ?>

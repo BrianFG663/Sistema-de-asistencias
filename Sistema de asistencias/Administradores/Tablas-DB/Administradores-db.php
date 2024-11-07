@@ -15,24 +15,30 @@
     $resultado->bindParam(':rol',$rol);
     $resultado->execute();
 
+    
+
     if (isset($_POST['id'])) {
         $id = $_POST['id'];
 
-        $sql = 
-        "SELECT *
-        FROM usuario
-        WHERE id = :id";
-
-        $resultadosql = $conexion->prepare($sql);
-        $resultadosql->bindParam(':id',$id);
-        $resultadosql->execute();
-        $admin = $resultadosql->fetch(PDO::FETCH_ASSOC);
-
         $administrador = new Usuario($adminsql['nombre'],$adminsql['apellido'],$adminsql['mail'],$adminsql['passw'],$adminsql['rol']);
-        $administrador->eliminarUsuario($conexion,$id);
+        $validar_cantidad = $administrador->validarCanditadAdmin($conexion);
 
-        header("Location: Administradores-db.php"); //se redirige a la misma pagina para evitar recargar el formulario
-        exit();
+        if($validar_cantidad["total_admin"] == 1){
+            ob_clean();
+            echo json_encode(['mensaje' => 'falso']);
+            exit;
+        }else{
+            $administrador->buscarUsuario($conexion,$id);
+            $administrador->eliminarUsuario($conexion,$id);
+            ob_clean();
+            echo json_encode(['mensaje' => 'verdadero']);
+            exit;
+
+        }
+
+
+
+        
     }
 ?>
 
@@ -87,7 +93,7 @@ while ($result = $resultado->fetch(PDO::FETCH_ASSOC)) {
             <div class="boton-eliminar">
                 <form action="'.$_SERVER['PHP_SELF'].'" method="post" id="eliminar-admin">
                     <input type="hidden" name="id" value="' . $result['id'] . '">
-                    <input type="button" class="eliminar-boton" value="Eliminar Administrador" onclick="EliminarAdmin(this)">
+                    <input type="button" class="eliminar-boton" value="Eliminar Administrador" onclick="EliminarAdmin(event,this)">
                 </form>
 
             </div>

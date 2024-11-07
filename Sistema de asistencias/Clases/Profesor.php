@@ -321,6 +321,27 @@
             $resultado_eliminar->execute();
         }
 
+        public static function verificarCumpleanos($conexion,$id_materia){
+            $sql_cumpleanos = 
+            "SELECT nombre, apellido
+            FROM alumno a
+            JOIN materia_alumno ma ON a.id = ma.alumno_id
+            WHERE DATE_FORMAT(fecha_nacimiento, '%m-%d') = DATE_FORMAT(CURDATE(), '%m-%d') AND materia_id = :materia_id";
+            
+            $resultado = $conexion->prepare($sql_cumpleanos);
+            $resultado->bindParam(':materia_id',$id_materia);
+            $resultado->execute();
+            $row = $resultado->fetchall(PDO::FETCH_ASSOC);
+
+   
+            if($row){
+                return $row;
+            }else{
+                return false;
+            }
+    
+        }
+
     }
 
 ?>
