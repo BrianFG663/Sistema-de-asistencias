@@ -1,10 +1,17 @@
 <?php
-
+    include_once '../../Conexion.php';
+    require_once '../../Clases/Profesor.php';
     session_start();
-    $rowprofesor = $_SESSION['rowprofesor'];
-    $instituto_id = $_SESSION['id_instituto'];
-    $materia_id = $_SESSION['id_materia'];
 
+    $rowprofesor = $_SESSION['rowprofesor'];
+    if(isset($_POST["id_alumno"])){
+        $id = $_POST["id_alumno"];
+        $_SESSION["id_alumno"] = $id;
+    }
+
+    $institutos = Profesor::institutosProfesor($conexion,$id);
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +46,6 @@
             <a href="tomar-asistencia.php"><img src="../../Resources/Images/tomar-asistencia.png" class="img-menu-admin"><span class="menu-span">Tomar asistencia</span></a>
             <a href="../estado-alumno.php"><img src="../../Resources/Images/graduado.png" class="img-menu-admin"><span class="alumno-span">Alumnos</span></a>
             <a href="eliminar-alumnos.php"><img src="../../Resources/Images/eliminar-alumno.png" class="img-menu-admin"><span class="agregar-alumno-span">eliminar alumno</span></a>
-            <a href="editar-alumno.php"><img src="../../Resources/Images/editar-alumno.png" class="img-menu-admin"><span class="agregar-alumno-span">editar alumno</span></a>
-
         </div>
         <div class="botton-div">
             <img class="image-div" src="../../Resources/Images/profesor.png">
@@ -51,8 +56,8 @@
 
 <body>
     <div class="formulario-materia">
-    <h2 class="title">INSCRIBIR ALUMNO</h2>
-        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" id="inscribir-alumno">
+    <h2 class="title">EDITAR ALUMNO</h2>
+        <form action="Procesar-editar-alumno.php" method="post" id="editar-alumno">
             <div class="container">
                 <div class="container-input">
                     <label for="">Nombre:</label>
@@ -60,6 +65,7 @@
                     <label for="">Apellido</label>
                     <input type="text" name="apellido-alumno" id="apellido-alumno" placeholder="Ingrese apellido" autocomplete="off">
                 </div>
+
                 <div class="container-input">
                     <label for="">DNI</label>
                     <input type="text" name="dni-alumno" id="dni-alumno" placeholder="Ingrese DNI" autocomplete="off">
@@ -70,7 +76,7 @@
         
             <div class="container-botones">
                 <input type="button" value="Menu" id="boton_atras" onclick="redireccion(4)">
-                <input type="button" value="Agregar alumno" id="boton_agregar" name="boton_agregar" onclick="formularioAlumno()">
+                <input type="button" value="Editar alumno" id="boton_agregar" name="boton_agregar" onclick="formularioEditarAlumno()">
             </div>
         </form>
     </div>
@@ -79,30 +85,75 @@
 
 <?php
 
-    require_once '../../Conexion.php';
-    require_once '../../Clases/Alumno.php';
+if(isset($_POST['nombre-alumno']) && !empty($_POST['nombre-alumno'])){
+        
+    $nombre_alumno = $_POST['nombre-alumno'];
+    $id = $_SESSION["id_alumno"];
 
-    if(isset($_POST['nombre-alumno'])){
-        $nombre = $_POST['nombre-alumno'];
-        $apellido = $_POST['apellido-alumno'];
-        $dni = $_POST['dni-alumno'];
-        $fecha_nacimiento =$_POST['fecha-alumno'];
+    $sql_parametros = 
+    "UPDATE alumno 
+    SET nombre = :nombre
+    WHERE id = :id";
 
-        $validar_dni = Alumno::validarAlumno($conexion,$dni);
+    $resultado = $conexion->prepare($sql_parametros);
+    $resultado->bindParam(':nombre',$nombre_alumno);
+    $resultado->bindParam(':id',$id);
+    $resultado->execute();
 
-        if($validar_dni){
-            $alumno = new Alumno($nombre,$apellido,$dni,$fecha_nacimiento);
-            $alumno->inscribirAlumno($conexion,$instituto_id,$materia_id);
+}
 
-            ob_clean();
-            echo json_encode(['mensaje' => 'verdadero']);
-            exit;
-        }else{
-            ob_clean();
-            echo json_encode(['mensaje' => 'falso']);
-            exit;
-        }
+if(isset($_POST['apellido-alumno']) && !empty($_POST['apellido-alumno'])){
+        
+    $apellido_alumno = $_POST['apellido-alumno'];
+    $id = $_SESSION["id_alumno"];
 
-    }
 
+    $sql_parametros = 
+    "UPDATE alumno 
+    SET apellido = :apellido
+    WHERE id = :id";
+
+    $resultado = $conexion->prepare($sql_parametros);
+    $resultado->bindParam(':apellido',$apellido_alumno);
+    $resultado->bindParam(':id',$id);
+    $resultado->execute();
+
+}
+
+if(isset($_POST['dni-alumno']) && !empty($_POST['dni-alumno'])){
+        
+    $dni_alumno = $_POST['dni-alumno'];
+    $id = $_SESSION["id_alumno"];
+
+
+    $sql_parametros = 
+    "UPDATE alumno 
+    SET dni = :dni
+    WHERE id = :id";
+
+    $resultado = $conexion->prepare($sql_parametros);
+    $resultado->bindParam(':dni',$dni_alumno);
+    $resultado->bindParam(':id',$id);
+    $resultado->execute();
+
+}
+
+if(isset($_POST['fecha-alumno']) && !empty($_POST['fecha-alumno'])){
+        
+    $nacimiento_alumno = $_POST['fecha-alumno'];
+    $id = $_SESSION["id_alumno"];
+
+
+    $sql_parametros = 
+    "UPDATE alumno 
+    SET fecha_nacimiento = :fecha_nacimiento
+    WHERE id = :id";
+
+    $resultado = $conexion->prepare($sql_parametros);
+    $resultado->bindParam(':fecha_nacimiento',$nacimiento_alumno);
+    $resultado->bindParam(':id',$id);
+    $resultado->execute();
+
+}
 ?>
+

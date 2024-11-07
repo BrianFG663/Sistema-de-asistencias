@@ -54,6 +54,32 @@ function formularioAsistencias(){
 
 }
 
+
+function formularioEditarAlumno(){
+
+
+Swal.fire({
+        title: "¿Desea actualizar los datos?",
+        showCancelButton: true,
+        confirmButtonText: "actualizar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "datos actualizadss!",
+                showConfirmButton: false,
+                timer: 1500
+              });
+            setTimeout(() => {
+                document.getElementById("editar-alumno").submit()
+            }, 1600);
+
+        }
+      });
+        
+}
+
 function formularioSalida(){
 
     Swal.fire({

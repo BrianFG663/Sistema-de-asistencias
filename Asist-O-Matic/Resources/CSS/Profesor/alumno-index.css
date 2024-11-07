@@ -855,6 +855,23 @@ input[type="date"]:focus {
     color: white;
     transform: scale(1.05);
 }
+
+.boton-eliminar-alumno{
+    background-color: white; /* Color de fondo verde */
+    color: #cc2e2e; /* Color del texto blanco */
+    border: 1px solid #cc2e2e; /* Sin borde */
+    font-weight: 400;
+    width: 90%;
+    border-radius: 2px;
+    height: 70%; 
+    transition: 0.3s;
+}
+
+.boton-eliminar-alumno:hover{
+    background-color: #cc2e2e;
+    color: white;
+    transform: scale(1.05);
+}
 .descripcion{
     width: 30%;
     display: flex;
@@ -1001,6 +1018,14 @@ input[type="date"]:focus {
 }
 
 .asistencia{
+    display: flex;
+    font-size: 20px;
+    width: 15%;
+    justify-content: center;
+    align-items: center;
+}
+
+#editar-alumno{
     display: flex;
     font-size: 20px;
     width: 15%;
