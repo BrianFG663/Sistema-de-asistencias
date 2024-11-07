@@ -64,7 +64,7 @@ $institutos = Instituto::institutosLibres($conexion,$profesor_id);
         <div class="container-alumnos">
                 <?php
                     if(!$institutos){
-                        echo "<div class='mensaje-materias'>NO HAY MATERIAS DISPONIBLES EN ESTE INSTITUTO</div>";
+                        echo "<div class='mensaje-materias'>NO HAY INSTITUTOS DISPONIBLES</div>";
                     }else{
                         echo '<div class="contenedor-materia-top"><div class="id-materia-top">ID</div><div class="nombre_materia_top">NOMBRE</div><div class="descripcion-top">DIRECCION</div><div class="fecha_descripcion-top">C.U.E</div><div class="codigo_materia-top">GESTION DEL INSTITUTO</div><div class="div-inscribirse-materia-top">¿DESEA INSCRIBIRSE?</div></div>';
                         foreach ($institutos as $instituto) {
