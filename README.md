@@ -11,7 +11,7 @@ Instalacion:<br>
 -descargar el repositorio de git-hub y localizarlo donde desee.<br>
 
 Ejecucion:<br>
-• Copiar la ruta del archivo index.php de la carpeta descargada desde Git-hub.<br>
+• Copiar la ruta de la carpeta "Asist-O-Matic" descargada desde Git-hub.<br>
 • Abrir laragon <br>
 • Abrir la consola de comandos de laragon y ejecutar el siguiente comando: <br>
 • php -S localhost:8000 (ruta copiada anteriormente) <br>
