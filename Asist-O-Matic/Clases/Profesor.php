@@ -211,6 +211,15 @@
         }
 
         public static function eliminarProfesor($conexion,$id){
+            $sql_eliminar_id = 
+            "UPDATE materias
+            SET profesor_id = NULL
+            WHERE profesor_id = :id";
+
+            $resultado = $conexion->prepare($sql_eliminar_id);
+            $resultado->bindParam(':id', $id);
+            $resultado->execute();
+
             $sql_eliminar_profesor = 
             "DELETE FROM profesor 
             WHERE id = :id";

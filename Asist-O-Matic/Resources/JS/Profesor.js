@@ -75,6 +75,10 @@ Swal.fire({
                 document.getElementById("editar-alumno").submit()
             }, 1600);
 
+            setTimeout(() => {
+                location.href =  "../estado-alumno.php";
+            }, 1700);
+
         }
       });
         

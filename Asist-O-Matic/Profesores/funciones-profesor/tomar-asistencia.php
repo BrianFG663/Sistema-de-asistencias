@@ -33,8 +33,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <header class="encabezado">
-    <img class="imagen-encabezado" src="../../Resources/Images/director-de-escuela.png">
-    <span class="bienvenido">Asist-o-Matic</span>
+    <a href="../profesores-index.php"><img class="imagen-encabezado" src="../../Resources/Images/director-de-escuela.png"></a>
+    <a href="../profesores-index.php"><span class="bienvenido">Asist-o-Matic</span></a>
 
     <div class="container-button">
         <div><a href="../../index.php"><img src="../../Resources/Images/cerrar-sesion.png" class="img-session"><span class="span-sesion">CERRAR SESION</span></a></div>
@@ -58,13 +58,25 @@
 
     <?php
         if($cumpleanos){
-            echo 
-            '<div id="desplegable">
-                <img class="img-izquierda" src="../../Resources/Images/cumpleaños.png">
-                <span>Hoy es cumpleaños de '.$cumpleanos[0]['nombre']." ".$cumpleanos[0]['apellido'].' </span>
-                <img class="img-derecha" src="../../Resources/Images/cumpleaños.png">
-            </div>';
+        
+            $nombres_unicos = [];
+            foreach ($cumpleanos as $persona) {
+                $nombre_completo = $persona['nombre'] . " " . $persona['apellido'];
+
+                if (!in_array($nombre_completo, $nombres_unicos)) {  //verifico que no este ya en el array
+                    $nombres_unicos[] = $nombre_completo;
+                }
+            }
+
+            $nombres_listado = implode(", ", $nombres_unicos);// separo los nombres con xomas y espacios
+
+            echo '<div id="desplegable">
+                    <img class="img-izquierda" src="../../Resources/Images/cumpleaños.png">
+                    <span>Hoy es cumpleaños de ' . $nombres_listado . '</span>
+                    <img class="img-derecha" src="../../Resources/Images/cumpleaños.png">
+                </div>';
         }
+        
     ?>
     
     
@@ -103,7 +115,7 @@
 
         <?php
         
-        if($alumnos){
+        if($alumnos && $asistencia_dia){
             echo '<div class="boton"><input class="boton-tomar-asistencia" type="button" value="SUBIR ASISTENCIA" onclick="formularioAsistencias()"></div>';
          }
         
@@ -111,4 +123,5 @@
 </body>
 
 <script src="../../Resources/JS/boton.js"></script>
+
 </html>

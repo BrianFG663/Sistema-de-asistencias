@@ -15,6 +15,10 @@ body {
     padding: 0px;
 }
 
+.alumno:hover {
+    background-color: #e7e5e5; /* Gris claro */
+}
+
 .cumpleaños{
     position: relative;
     left: 15%;

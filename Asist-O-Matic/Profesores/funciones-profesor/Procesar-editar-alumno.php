@@ -1,18 +1,110 @@
 <?php
     include_once '../../Conexion.php';
     require_once '../../Clases/Profesor.php';
+    require_once '../../Clases/Alumno.php';
     session_start();
 
     $rowprofesor = $_SESSION['rowprofesor'];
     if(isset($_POST["id_alumno"])){
         $id = $_POST["id_alumno"];
         $_SESSION["id_alumno"] = $id;
+        $alumno = Alumno::getAlumno($conexion,$id);
     }
 
     $institutos = Profesor::institutosProfesor($conexion,$id);
 
     
 ?>
+
+<?php
+
+$actualizado = false;
+
+if(isset($_POST['nombre-alumno']) && !empty($_POST['nombre-alumno'])){
+        
+    $nombre_alumno = $_POST['nombre-alumno'];
+    $id = $_SESSION["id_alumno"];
+
+    $sql_parametros = 
+    "UPDATE alumno 
+    SET nombre = :nombre
+    WHERE id = :id";
+
+    $resultado = $conexion->prepare($sql_parametros);
+    $resultado->bindParam(':nombre',$nombre_alumno);
+    $resultado->bindParam(':id',$id);
+    $resultado->execute();
+
+    $actualizado = true;
+}
+
+if(isset($_POST['apellido-alumno']) && !empty($_POST['apellido-alumno'])){
+        
+    $apellido_alumno = $_POST['apellido-alumno'];
+    $id = $_SESSION["id_alumno"];
+
+
+    $sql_parametros = 
+    "UPDATE alumno 
+    SET apellido = :apellido
+    WHERE id = :id";
+
+    $resultado = $conexion->prepare($sql_parametros);
+    $resultado->bindParam(':apellido',$apellido_alumno);
+    $resultado->bindParam(':id',$id);
+    $resultado->execute();
+
+    $actualizado = true;
+
+}
+
+if(isset($_POST['dni-alumno']) && !empty($_POST['dni-alumno'])){
+        
+    $dni_alumno = $_POST['dni-alumno'];
+    $id = $_SESSION["id_alumno"];
+
+
+    $sql_parametros = 
+    "UPDATE alumno 
+    SET dni = :dni
+    WHERE id = :id";
+
+    $resultado = $conexion->prepare($sql_parametros);
+    $resultado->bindParam(':dni',$dni_alumno);
+    $resultado->bindParam(':id',$id);
+    $resultado->execute();
+
+
+    $actualizado = true;
+}
+
+if(isset($_POST['fecha-alumno']) && !empty($_POST['fecha-alumno'])){
+        
+    $nacimiento_alumno = $_POST['fecha-alumno'];
+    $id = $_SESSION["id_alumno"];
+
+
+    $sql_parametros = 
+    "UPDATE alumno 
+    SET fecha_nacimiento = :fecha_nacimiento
+    WHERE id = :id";
+
+    $resultado = $conexion->prepare($sql_parametros);
+    $resultado->bindParam(':fecha_nacimiento',$nacimiento_alumno);
+    $resultado->bindParam(':id',$id);
+    $resultado->execute();
+
+    $actualizado = true;
+
+}
+
+if ($actualizado) {
+    header("Location: editar-alumno.php?success=true");
+    exit();
+}
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,8 +123,8 @@
 </head>
 
 <header class="encabezado">
-    <img class="imagen-encabezado" src="../../Resources/Images/director-de-escuela.png">
-    <span class="bienvenido">Asist-o-Matic</span>
+    <a href="../profesores-index.php"><img class="imagen-encabezado" src="../../Resources/Images/director-de-escuela.png"></a>
+    <a href="../profesores-index.php"><span class="bienvenido">Asist-o-Matic</span></a>
 
     <div class="container-button">
         <div><a href="../../index.php"><img src="../../Resources/Images/cerrar-sesion.png" class="img-session"><span class="span-sesion">CERRAR SESION</span></a></div>
@@ -55,7 +147,30 @@
 </div>
 
 <body>
-    <div class="formulario-materia">
+
+    <div class="contenedor-editar-alumno">
+        <span class="titulo-edicion">ALUMNO EN EDICION</span>
+    <div class="alumno-top"><div class="top-id">ID</div><div class="top-nombre">NOMBRE COMPLETO</div><div class="top-dni">DNI</div><div class="top-fecha_nacimiento">FECHA DE NACIMIENTO</div></div>
+    <?php
+
+if (isset($_SESSION['id_alumno'])) {
+    $id_alumno = $_SESSION['id_alumno'];
+    $alumno = Alumno::getAlumno($conexion, $id_alumno);
+    
+    if ($alumno) {
+        echo '<div class="alumno">';
+        echo '<div class="id">' . $alumno['id'] . '</div>';
+        echo '<div class="nombre">' . $alumno['nombre'] . ' ' . $alumno['apellido'] . '</div>';
+        echo '<div class="dni">' . $alumno['dni'] . '</div>';
+        echo '<div class="fecha_nacimiento">' . $alumno['fecha_nacimiento'] . '</div>';
+        echo '</div>';
+    }
+}
+
+    ?>
+    </div>
+
+    <div class="formulario-editar-alumno">
     <h2 class="title">EDITAR ALUMNO</h2>
         <form action="Procesar-editar-alumno.php" method="post" id="editar-alumno">
             <div class="container">
@@ -82,78 +197,3 @@
     </div>
 </body>
 </html>
-
-<?php
-
-if(isset($_POST['nombre-alumno']) && !empty($_POST['nombre-alumno'])){
-        
-    $nombre_alumno = $_POST['nombre-alumno'];
-    $id = $_SESSION["id_alumno"];
-
-    $sql_parametros = 
-    "UPDATE alumno 
-    SET nombre = :nombre
-    WHERE id = :id";
-
-    $resultado = $conexion->prepare($sql_parametros);
-    $resultado->bindParam(':nombre',$nombre_alumno);
-    $resultado->bindParam(':id',$id);
-    $resultado->execute();
-
-}
-
-if(isset($_POST['apellido-alumno']) && !empty($_POST['apellido-alumno'])){
-        
-    $apellido_alumno = $_POST['apellido-alumno'];
-    $id = $_SESSION["id_alumno"];
-
-
-    $sql_parametros = 
-    "UPDATE alumno 
-    SET apellido = :apellido
-    WHERE id = :id";
-
-    $resultado = $conexion->prepare($sql_parametros);
-    $resultado->bindParam(':apellido',$apellido_alumno);
-    $resultado->bindParam(':id',$id);
-    $resultado->execute();
-
-}
-
-if(isset($_POST['dni-alumno']) && !empty($_POST['dni-alumno'])){
-        
-    $dni_alumno = $_POST['dni-alumno'];
-    $id = $_SESSION["id_alumno"];
-
-
-    $sql_parametros = 
-    "UPDATE alumno 
-    SET dni = :dni
-    WHERE id = :id";
-
-    $resultado = $conexion->prepare($sql_parametros);
-    $resultado->bindParam(':dni',$dni_alumno);
-    $resultado->bindParam(':id',$id);
-    $resultado->execute();
-
-}
-
-if(isset($_POST['fecha-alumno']) && !empty($_POST['fecha-alumno'])){
-        
-    $nacimiento_alumno = $_POST['fecha-alumno'];
-    $id = $_SESSION["id_alumno"];
-
-
-    $sql_parametros = 
-    "UPDATE alumno 
-    SET fecha_nacimiento = :fecha_nacimiento
-    WHERE id = :id";
-
-    $resultado = $conexion->prepare($sql_parametros);
-    $resultado->bindParam(':fecha_nacimiento',$nacimiento_alumno);
-    $resultado->bindParam(':id',$id);
-    $resultado->execute();
-
-}
-?>
-

@@ -31,8 +31,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <header class="encabezado">
-    <img class="imagen-encabezado" src="../../Resources/Images/director-de-escuela.png">
-    <span class="bienvenido">Asist-o-Matic</span>
+    <a href="../profesores-index.php"><img class="imagen-encabezado" src="../../Resources/Images/director-de-escuela.png"></a>
+    <a href="../profesores-index.php"><span class="bienvenido">Asist-o-Matic</span></a>
 
     <div class="container-button">
         <div><a href="../../index.php"><img src="../../Resources/Images/cerrar-sesion.png" class="img-session"><span class="span-sesion">CERRAR SESION</span></a></div>
@@ -53,17 +53,6 @@
     </div>
 </div>
 <body>
-
-    <?php
-        if($cumpleanos){
-            echo 
-            '<div id="desplegable">
-                <img class="img-izquierda" src="../../Resources/Images/cumpleaños.png">
-                <span>Hoy es cumpleaños de '.$cumpleanos[0]['nombre']." ".$cumpleanos[0]['apellido'].' </span>
-                <img class="img-derecha" src="../../Resources/Images/cumpleaños.png">
-            </div>';
-        }
-    ?>
 
     <div class="container">
         <div class="top"><button class="button-back" onclick="redireccion(2)"></button><span class="titulo">LISTADO DE ALUMNOS</span></div>

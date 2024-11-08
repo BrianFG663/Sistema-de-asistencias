@@ -20,8 +20,8 @@
 </head>
 
 <header class="encabezado">
-    <img class="imagen-encabezado" src="../../Resources/Images/director-de-escuela.png">
-    <span class="bienvenido">Asist-o-Matic</span>
+    <a href="../Administrador-index.php"><img class="imagen-encabezado" src="../../Resources/Images/director-de-escuela.png"></a>
+    <a href="../Administrador-index.php"><span class="bienvenido">Asist-o-Matic</span></a>
 
     <div class="container-button">
         <div><a href="../../index.php"><img src="../../Resources/Images/cerrar-sesion.png" class="img-session"><span class="span-sesion">CERRAR SESION</span></a></div>
