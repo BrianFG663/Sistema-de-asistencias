@@ -92,7 +92,6 @@
         
             $instituto_ids = $resultado->fetchAll(PDO::FETCH_COLUMN);
         
-            // se crea un array del tamaño de la cantidad que tenga institutos_ids asi poder utilizarlo desde la con sulta con IN, sin este array con '?' no se puede ejecutar con pdo ya que es para evitar sql inyection
             $array_ids = implode(',', array_fill(0, count($instituto_ids), '?'));
         
             $sql_institutos = 

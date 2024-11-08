@@ -537,6 +537,34 @@ function EliminarAdmin(event, button) {
     });
 }
 
+function Eliminartabla(button) {
+
+    let formulario = button.closest('form');
+
+    Swal.fire({
+        title: "¿Desea eliminarlo?",
+        showCancelButton: true,
+        confirmButtonText: "Subir",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "eliminado con exito!",
+                showConfirmButton: false,
+                timer: 1500
+              });
+            
+            setTimeout(() => {
+                formulario.submit()
+            }, 1600);
+
+        }
+      });
+        
+
+}
+
 
 function editarPerfil(){
     let nombre = document.getElementById("nombre").value

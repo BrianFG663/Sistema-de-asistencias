@@ -86,7 +86,7 @@
                     <div class="boton-eliminar">
                         <form action="'.$_SERVER['PHP_SELF'].'" method="post" id="eliminar-admin">
                             <input type="hidden" name="id" value="' . $result['id'] . '">
-                            <input type="button" class="eliminar-boton" value="Eliminar materia" onclick="EliminarAdmin(this)">
+                            <input type="button" class="eliminar-boton" value="Eliminar materia" onclick="Eliminartabla(this)">
                         </form>
                     </div>
                 </div>';

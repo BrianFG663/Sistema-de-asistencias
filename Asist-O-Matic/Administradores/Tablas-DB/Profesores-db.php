@@ -84,7 +84,7 @@ while ($result = $resultado->fetch(PDO::FETCH_ASSOC)) {
             <div class="boton-eliminar">
                 <form action="'.$_SERVER['PHP_SELF'].'" method="post" id="eliminar-admin">
                     <input type="hidden" name="id" value="' . $result['id'] . '">
-                    <input type="button" class="eliminar-boton" value="Eliminar profesor" onclick="EliminarAdmin(this)">
+                    <input type="button" class="eliminar-boton" value="Eliminar profesor" onclick="Eliminartabla(this)">
                 </form>
 
             </div>
