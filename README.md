@@ -16,6 +16,7 @@ Ejecucion:<br>
 • Abrir la consola de comandos de laragon y ejecutar el siguiente comando: <br>
 • php -S localhost:8000 (ruta copiada anteriormente) <br>
 • Entrar a tu navegador y entrar a la pagina http://localhost:8000/<br> <br>
+• Ajusta el zoom entre de la pagina segun lo necesario<br> <br>
 • inicia sesion con los siguientes datos:<br> <br>
     • E-mail: javier@gmail.com<br>
     • Contrasena: 1234<br> <br> <br>
