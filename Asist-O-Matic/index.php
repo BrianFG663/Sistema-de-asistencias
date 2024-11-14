@@ -1,8 +1,3 @@
-<?php
-    session_unset();
-    include_once 'Setup.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

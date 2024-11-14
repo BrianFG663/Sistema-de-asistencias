@@ -157,7 +157,7 @@ $alumnos = $profesor->mostrarAlumnos($conexion,$_SESSION['id_materia'],$id_insti
         </div>
 </div>
 
-<div class="container-botton">
+    <div class="container-boton-calificaciones">
         
         <div class="recuperatorio" id="recuperatorio">
             <div id="label-fecha">
@@ -170,7 +170,7 @@ $alumnos = $profesor->mostrarAlumnos($conexion,$_SESSION['id_materia'],$id_insti
 
         </div>
 
-        <div class="select-contenedor">
+        <div class="select-contenedor-calificaciones">
             <label for="tipo-examen">Seleccione tipo de examen</label>
             <select class="select-tipo" name="tipo-examen" id="tipo-examen" onchange="mostrarLabel()">
                 <option value="1">PARCIAL</option>

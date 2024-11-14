@@ -106,6 +106,19 @@ body {
     background-color: white;
 }
 
+.container-boton-calificaciones{
+    position: relative;
+    left: 15%;
+    top: 15vh;
+    height: 5vh;
+    width: 83%;
+    display: flex;
+    border: #b33333 1px solid;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: white;
+}
+
 .cantidad-asistencias{
     position: relative;
     left: 82%;
@@ -192,7 +205,19 @@ body {
     left: 3%;
 }
 
+.select-contenedor-calificaciones{
+    position: relative;
+    top: 0.5vh;
+    width: 50%;
+    left: 3%;
+    height: 95%;
+}
+
 .select-contenedor label{
+    font-weight: 600;
+}
+
+.select-contenedor-calificaciones label{
     font-weight: 600;
 }
 
