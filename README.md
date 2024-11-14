@@ -13,7 +13,13 @@ Instalacion:<br>
 Ejecucion:<br>
 • Copiar la ruta de la carpeta "Asist-O-Matic" ubicada dentro de la carpeta descargada desde Git-hub.<br>
 • Abrir laragon <br>
-• Abrir la consola de comandos de laragon y ejecutar el siguiente comando: <br>
+• Iniciar laragon <br>
+• Entrar en la seccion de base de datos <br>
+• Ir a "cargar archivo SQL" <br>
+• Buscar la carpeta descargada, entrar a la carpeta Asist-o-Matic y abrir "Asist-o-Matic_BD.sql" <br>
+• Dar click "ejecutar SQL" <br>
+• Cerramos la parte de base de datos <br>
+• Nuevamente en la parte principal de laragon abrimos la consola de comandos y ejecutar el siguiente comando: <br>
 • php -S localhost:8000 (ruta copiada anteriormente) <br>
 • Entrar a tu navegador y entrar a la pagina http://localhost:8000/<br> <br>
 • Ajusta el zoom entre de la pagina segun lo necesario<br> <br>
