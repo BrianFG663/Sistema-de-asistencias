@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'MiFuente';
+    src: url('/Resources/Fonts/CaviarDreams.ttf') format('truetype');
+}
+
+html {
+    font-family: 'MiFuente', sans-serif;
+}
+
+body {
+    background: rgb(240, 240, 240);
+    margin: 0px;
+    padding: 0px;
+}
+
+.contenedores {
+    background-color: white;
+    position: relative;
+    left: 25%;
+    top: 30vh;
+    width: 60%;
+    min-height: 40vh; /* Altura mínima para que el contenedor siempre tenga tamaño */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.container-institutos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se organicen en filas */
+    justify-content: center;
+    gap: 20px; /* Espacio entre botones */
+    margin-top: 20px;
+    width: 50%;
+}
+
+.instituto {
+    flex: 1 1 calc(30% - 20px); /* Cambiado para ocupar el 30% del ancho del contenedor */
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Cambiado a 100% para ocupar todo el ancho disponible */
+}
+
+.button-instituto {
+    color: #B33333;
+    font-weight: 600;
+    background-color: white;
+    border-radius: 2px;
+    width: 10vw; /* Ocupa todo el ancho del contenedor instituto */
+    height: 5vh;
+    border: 1.5px solid #B33333;
+    transition: 0.2s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-instituto:hover {
+    color: white;
+    background-color: #b33333ec;
+    border: 1.5px solid #B33333;
+    cursor: pointer;
+}
+
+.inscribirse-instituto {
+    color: #33b35e;
+    font-weight: 600;
+    background-color: white;
+    border-radius: 5px;
+    width: 14vw;
+    height: 5vh;
+    border: 1.5px solid #33b35e;
+    transition: 0.2s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.inscribirse-instituto:hover {
+    color: white;
+    background-color: #33b35ea8;
+    border: 1.5px solid #33b35e;
+    cursor: pointer;
+}
+
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 15%;
+    background-color: #b33333;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.titulo-encabezado::before {
+    content: "[";
+    color: rgb(241, 170, 122);
+    margin-right: 5px;
+}
+
+.titulo-encabezado::after {
+    content: "]";
+    color: rgb(241, 170, 122);
+    margin-left: 5px;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 15%;
+    background-color: #b33333;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    align-items: center;
+    border-radius: 0 0 8px 8px;
+}
+
+.button-back {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambiar cursor a puntero */
+    width: 60px; /* Ancho del botón, ajusta según necesites */
+    height: 60px; /* Alto del botón, ajusta según necesites */
+    position: absolute; /* Posicionamiento absoluto */
+    left: 10px; /* Alinear a la izquierda */
+    top: 50%; /* Centrado verticalmente */
+    transform: translateY(-50%); /* Ajustar para centrar verticalmente */
+}
+
+.button-back::before {
+    content: ''; /* Contenido vacío para la flecha */
+    border: solid white; /* Color de la flecha */
+    border-width: 0 4px 4px 0; /* Aumentar el ancho de la flecha */
+    display: inline-block; /* Para que funcione el layout */
+    padding: 8px; /* Espaciado alrededor de la flecha */
+    transform: rotate(135deg); /* Rotar para que se vea como flecha hacia atrás */
+    position: absolute; /* Posicionar correctamente */
+    top: 50%; /* Centrado verticalmente */
+    left: 15px; /* Ajustar la posición a la izquierda */
+    transform: translateY(-50%) rotate(135deg); /* Centrado verticalmente */
+}
+
+/* Estilo para el hover (opcional) */
+.button-back:hover {
+    opacity: 0.7; /* Efecto al pasar el mouse */
+}
